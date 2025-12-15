@@ -1,14 +1,14 @@
 # Use official Tomcat 8 image with JDK 8
-FROM tomcat:8.5-jdk8
+FROM tomcat:8-jdk8
 
 # Remove default webapps (optional, keeps container clean)
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your WAR file into Tomcat's webapps folder
-COPY /var/lib/jenkins/workspace/DockerCiCD-1/webapp/target/webapp.war /usr/local/tomcat/webapps/webapp.war
+COPY webapp/target/webapp.war /usr/local/tomcat/webapps/webapp.war
 
 # Expose Tomcat default port
-EXPOSE 9091
+EXPOSE 9092
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
