@@ -5,7 +5,7 @@ FROM tomcat:8.5-jdk8
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your WAR file into Tomcat's webapps folder
-COPY target/webapp.war /usr/local/tomcat/webapps/webapp.war
+COPY /var/lib/jenkins/workspace/DockerCiCD-1/webapp/target/webapp.war /usr/local/tomcat/webapps/webapp.war
 
 # Expose Tomcat default port
 EXPOSE 9091
