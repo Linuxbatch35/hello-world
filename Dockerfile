@@ -5,7 +5,7 @@ FROM tomcat:8-jdk8
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy your WAR file into Tomcat's webapps folder
-COPY webapp/target/webapp.war /usr/local/tomcat/webapps/webapp.war
+COPY webapp/target/webapp.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose Tomcat default port
 EXPOSE 9092
